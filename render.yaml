@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: vasixzz-osint-bot
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: WEBHOOK_SECRET
+        generateValue: true
+      - key: MAX_RESULTS
+        value: "8"
+      - key: REQUEST_TIMEOUT
+        value: "20"
